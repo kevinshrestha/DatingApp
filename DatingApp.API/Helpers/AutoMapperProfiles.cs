@@ -23,6 +23,9 @@ namespace DatingApp.API.Helpers
                 .ForMember(dest => dest.Age, IMappingOperationOptions => IMappingOperationOptions.MapFrom(src => src.DateOfBirth.CalculateAge()));
 
             CreateMap<Photo, PhotosForDetailedDto>();
+            // whenever you create a map, it's "from" then "to"
+            // exmaple: you want to map UserForUpdateDto to the User, not the other way around
+            CreateMap<UserForUpdateDto, User>();
         }   
     }
 }
